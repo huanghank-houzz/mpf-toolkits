@@ -49,6 +49,16 @@ if [ "$POD_NAME" == "" ]; then
   exit 1
 fi
 
+if [ "$LOGIN_CLUSTER" == "" ]; then
+  echo "No input any CLUSTER !!"
+  exit 1
+fi
+
+if [ "$LOGIN_POD" == "" ]; then
+  echo "No input any NAMESPACE !!"
+  exit 1
+fi
+
 # Composing login cluster command
 LOGIN_CLUSTER="tsh kube login $CLUSTER && "
 
@@ -59,14 +69,9 @@ LOGIN_POD="kubectl exec -it $POD_NAME -n $NAMESPACE -- /bin/bash"
 # 1. login admin
 # 2. login cluster
 # 3. into the pods
+CMD+=$LOGIN_CLUSTER
+CMD+=$LOGIN_POD
 
-if [ "$LOGIN_CLUSTER" == "" ]; then
-  CMD+=$LOGIN_CLUSTER
-fi
-
-if [ "$LOGIN_POD" == "" ]; then
-  CMD+=$LOGIN_POD
-fi
 
 # echo "Running command: $CMD"
 eval $CMD
