@@ -49,12 +49,12 @@ if [ "$POD_NAME" == "" ]; then
   exit 1
 fi
 
-if [ "$LOGIN_CLUSTER" == "" ]; then
+if [ "$CLUSTER" == "" ]; then
   echo "No input any CLUSTER !!"
   exit 1
 fi
 
-if [ "$LOGIN_POD" == "" ]; then
+if [ "$NAMESPACE" == "" ]; then
   echo "No input any NAMESPACE !!"
   exit 1
 fi
