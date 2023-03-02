@@ -1,0 +1,10 @@
+cd ~/houzz/c2products;
+ant clean;
+ant;
+./package-feed-uploader.sh;
+rm -rf c2products; mkdir c2products;
+tar -xvf ./release/c2products_feeduploader.tar -C c2products;
+cp test_data.xml c2products;
+tsh kube login stg-batch;
+kubectl cp c2products rq-product-feed-1-2023-02-19-hank.huang-g8f7x:/home/clipu -n backend -c rq-worker-container -v=8;
+kubectl cp c2products rq-product-feed-1-2023-02-19-hank.huang-g8f7x:/home/clipu-c rq-worker-container -v=8;
