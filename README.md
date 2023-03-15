@@ -10,12 +10,12 @@ alias mpf="cd ~/mpf-toolkits";
 
 # rq login alias
 alias l="KUBECONFIG=${HOME?}/teleport.yaml tsh login --proxy=teleport.k8s-mgmt.stghouzz.com:443 --auth=github"
-alias rqs="cd ~/mpf-toolkits/; sh k8s.sh -rsi ";
-alias rqsl="cd ~/mpf-toolkits/; sh k8s.sh -lrsi ";
-alias rqp="cd ~/mpf-toolkits/; sh k8s.sh -rpi ";
-alias rqpl="cd ~/mpf-toolkits/; sh k8s.sh -lrpi ";
-alias c="cd ~/mpf-toolkits/; sh k8s.sh -ci ";
-alias cl="cd ~/mpf-toolkits/; sh k8s.sh -cli ";
+alias rqs="sh ~/mpf-toolkits/k8s.sh -rsi ";
+alias rqsl="sh ~/mpf-toolkits/k8s.sh -lrsi ";
+alias rqp="sh ~/mpf-toolkits/k8s.sh -rpi ";
+alias rqpl="sh ~/mpf-toolkits/k8s.sh -lrpi ";
+alias c="sh ~/mpf-toolkits/k8s.sh -ci ";
+alias cl="sh ~/mpf-toolkits/k8s.sh -cli ";
 
 # c2product
 alias c2pu="sh ../../mpf-toolkits/c2product_upload.sh";`
